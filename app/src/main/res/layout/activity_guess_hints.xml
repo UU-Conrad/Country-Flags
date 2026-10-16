@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Top Score Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/txt_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/raleway"
+            android:text="Score: 0"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Flag Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/border_light"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            android:id="@+id/img_flag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Country Flag" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Question Label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/raleway"
+        android:text="What country is this?"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <!-- Dashes & Revealed Characters -->
+    <TextView
+        android:id="@+id/txt_dashes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway"
+        android:letterSpacing="0.35"
+        android:text="A - - - A - - A"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Single Character Input -->
+    <EditText
+        android:id="@+id/et_character"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:fontFamily="@font/raleway"
+        android:gravity="center"
+        android:hint="Enter one letter (e.g. A)"
+        android:inputType="textCapCharacters"
+        android:maxLength="1"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp" />
+
+    <!-- Incorrect Attempts Counter -->
+    <TextView
+        android:id="@+id/txt_attempts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/raleway"
+        android:text="Incorrect attempts: 0 / 3"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
+
+    <!-- Feedback Displays -->
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/raleway"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_correct_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/raleway"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Action Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_action"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/primary_blue"
+        android:fontFamily="@font/raleway"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="27dp" />
+
+</LinearLayout>

@@ -1,55 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="28dp">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <!-- Top Globe Graphic -->
+    <ImageView
+        android:id="@+id/img_home_globe"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="World Globe"
+        android:src="@mipmap/ic_launcher" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/txt_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/raleway"
+        android:text="Country Flag\nGame"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/txt_main_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/raleway"
+        android:text="Test your knowledge of\nworld flags and countries!"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="15sp" />
+
+    <!-- Spacer to push buttons towards bottom -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            android:layout_margin="15dp"
-            app:cardCornerRadius="30dp">
+    <!-- Filled New Game Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_new_game"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/primary_blue"
+        android:fontFamily="@font/raleway"
+        android:text="▶  New Country Game"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="28dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_r"
-                android:text="Country Flags"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
+    <!-- Outlined About Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_about"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/raleway"
+        android:text="ⓘ  About"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_blue"
+        android:textSize="16sp"
+        app:cornerRadius="28dp"
+        app:strokeColor="@color/primary_blue"
+        app:strokeWidth="1.5dp" />
 
-        <Button
-            android:id="@+id/btn_new_game"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/button"
-            android:fontFamily="@font/montserrat_r"
-            android:text="New Game"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btn_about"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/button"
-            android:fontFamily="@font/montserrat_r"
-            android:text="About"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

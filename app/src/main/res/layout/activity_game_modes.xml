@@ -4,62 +4,244 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center_horizontal">
+    android:padding="20dp">
 
-    <androidx.cardview.widget.CardView
+    <!-- Header bar -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="30dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="Back" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:fontFamily="@font/montserrat_r"
+            android:id="@+id/txt_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/raleway"
             android:text="Select Game Mode"
-            android:textSize="26sp"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
             android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_mode_guess_country"
+    <!-- 2x2 Grid of Mode Cards -->
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/button"
-        android:fontFamily="@font/montserrat_r"
-        android:text="Guess the Country"
-        android:textSize="18sp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:columnCount="2"
+        android:rowCount="2">
 
-    <Button
-        android:id="@+id/btn_mode_guess_hints"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/button"
-        android:fontFamily="@font/montserrat_r"
-        android:text="Guess-Hints"
-        android:textSize="18sp" />
+        <!-- Card 1: Guess the Country -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_guess_country"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="1dp">
 
-    <Button
-        android:id="@+id/btn_mode_guess_flag"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/button"
-        android:fontFamily="@font/montserrat_r"
-        android:text="Guess the Flag"
-        android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
 
-    <Button
-        android:id="@+id/btn_mode_advanced"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/button"
-        android:fontFamily="@font/montserrat_r"
-        android:text="Advanced Level"
-        android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌍"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Guess the\nCountry"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Choose from dropdown"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 2: Guess-Hints -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_guess_hints"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Guess-Hints"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Letter by letter hints"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 3: Guess the Flag -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_guess_flag"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚩"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Guess the Flag"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Pick from 3 flags"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 4: Advanced Level -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_advanced_level"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="24dp"
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⭐"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Advanced Level"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Identify all three"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
 </LinearLayout>

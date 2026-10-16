@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@color/accent"
+
     tools:context=".About">
 
     <androidx.cardview.widget.CardView
@@ -28,8 +28,8 @@
                 android:id="@+id/SettingsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_r"
-                android:text="Who We are"
+                android:fontFamily="@font/raleway"
+                android:text="About"
                 android:textAlignment="center"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="24dp"
-                android:fontFamily="@font/montserrat_r"
+                android:fontFamily="@font/raleway"
                 android:gravity="center"
                 android:lineSpacingExtra="8dp"
                 android:padding="16dp"
